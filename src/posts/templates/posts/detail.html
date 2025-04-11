@@ -57,7 +57,7 @@
 
     <!-- carousel -->
     {% if obj.get_photos %}
-        <div id="carouselExampleControls" class="carousel slide">
+        <div id="carouselExampleControls" class="carousel slide mb-2" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% for p in obj.get_photos %}
                     <div class="carousel-item {% if forloop.counter == 1%}active{% endif %}">
