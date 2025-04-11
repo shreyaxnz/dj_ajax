@@ -1,0 +1,12 @@
+{% url 'posts:main-post-view' as path_to_home %}
+{% url 'profiles:my-profile' as path_to_my_profile %}
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center gap-3">
+      <a class="navbar-brand mb-0" href="{{ path_to_home }}">Posts-proj</a>
+      <a class="nav-link p-0 {% if request.path == path_to_home %}active{% endif %}" href="{{ path_to_home }}">Home</a>
+      <a class="nav-link p-0 {% if request.path == path_to_my_profile %}active{% endif %}" href="{{ path_to_my_profile }}">My Profile</a>
+    </div>
+  </div>
+</nav>
