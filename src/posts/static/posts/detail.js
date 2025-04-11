@@ -10,7 +10,7 @@ const updateURL = window.location.href + "update/"
 const deleteURL = window.location.href + "delete/"
 
 const updateForm = document.getElementById('update-form')
-const deleeForm = document.getElementById('delete-form')
+const deleteForm = document.getElementById('delete-form')
 
 const spinnerBox = document.getElementById('spinner-box')
 
@@ -88,4 +88,23 @@ updateForm.addEventListener('submit',e=>{
         }
     })
 
+})
+
+deleteForm.addEventListener('submit', e=>{
+    e.preventDefault()
+
+    $.ajax({
+        type: 'POST',
+        url: deleteURL,
+        data: {
+            'csrfmiddlewaretoken': csrf[0].value,
+        },
+        success: function(response){
+            window.location.href = window.location.origin
+            localStorage.setItem('title',titleInput.value)
+        },
+        error: function(error){
+            console.log(error)
+        }
+    })
 })
