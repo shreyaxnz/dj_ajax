@@ -1,6 +1,5 @@
 console.log('hello world')
 
-
 const postsBox = document.getElementById('posts-box')
 const spinnerBox = document.getElementById('spinner-box')
 const loadBtn = document.getElementById('load-btn')
